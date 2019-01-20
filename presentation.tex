@@ -1,0 +1,72 @@
+% -*-mode:LaTeX; coding: utf-8;-*-
+
+% Wahl des Ausgabemodus
+\documentclass{beamer}           % Präsentation (Farbe mit \pause)
+%\documentclass[handout]{beamer} % Handoutversion (s/w und 4up ohne \pause)
+%\documentclass[trans]{beamer}   % wie Präsentation, aber ohne \pause
+
+\usepackage[ngerman]{babel}
+
+% Anpassen ans eingestellte Encoding
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\usetheme{HN}
+
+% für anderes Logo als fb03:
+\setHNlogo{none}
+
+% Navigationselemente verstecken
+\beamertemplatenavigationsymbolsempty
+
+% wenn andere Fußzeile gewünscht, auskommentieren und anpassen:
+% footline
+%
+%\setbeamertemplate{footline}[text line]{
+%   \begin{beamercolorbox}[wd=0.98\paperwidth]
+%      \insertshortauthor:~\insertshorttitle.~-\insertframenumber-
+%      %\inserttotalframenumber
+%      \hfill \vskip 0.1cm
+%   \end{beamercolorbox}
+%}
+                             
+
+
+%------------------------------------------------------------------------
+% Titelseite
+\title[WPP]{Praktikum Projektfach}
+
+\author[Team]{WPP Team}
+\institute{Hochschule Niederrhein - Fachbereich Elektrotechnik \& Informatik}
+\date{30. Januar 2019}
+
+\begin{document}
+\frame[plain]{\titlepage}
+
+
+
+%-----------------------------------------------------------
+% Strukturierung
+\begin{frame}{Strukturierung}
+	\begin{itemize}
+		\item Aufgabe
+		\item Algorithmen
+		\item Heuristiken
+		\item Ausblick
+	\end{itemize}
+\end{frame}
+
+% Actual content
+\input{content.tex}
+
+\begin{frame}{}
+\fontsize{24pt}{12pt}\selectfont
+\centering{Vielen Dank für Ihre Aufmerksamkeit}
+\end{frame}
+
+\end{document}
