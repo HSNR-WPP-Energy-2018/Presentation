@@ -5,6 +5,10 @@
 %\documentclass[handout]{beamer} % Handoutversion (s/w und 4up ohne \pause)
 %\documentclass[trans]{beamer}   % wie Präsentation, aber ohne \pause
 
+
+\usepackage{sansmathaccent}
+\pdfmapfile{+sansmathaccent.map}
+
 \usepackage[ngerman]{babel}
 
 % Anpassen ans eingestellte Encoding
@@ -13,6 +17,7 @@
 \usepackage{listings}
 \usepackage{booktabs}
 \usepackage{hyperref}
+
 
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 
@@ -48,7 +53,10 @@
 \begin{document}
 \frame[plain]{\titlepage}
 
-
+%-----------------------------------------------------------
+\begin{frame}{Aufbau der Präsentation}
+\tableofcontents  
+\end{frame}
 
 %-----------------------------------------------------------
 % Strukturierung
@@ -58,9 +66,9 @@
 		\item Algorithmen % Idee, Funktionsweise, Anwendungsfälle (Eignung), Probleme - Einleitung (Can)
 		\begin{itemize}
 			\item Korellationsmatrix % Can
-			\item Cubic Splines % Anna
 			\item Linear % Anna
 			\item Newton % Anna
+			\item Cubic Splines % Anna
 			\item Yesterday % Anna
 			\item Averaging % Sebastian
 			\item Datenbank % Sebastian
