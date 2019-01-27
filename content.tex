@@ -227,3 +227,70 @@ text
 \end{itemize}
 \end{block}
 \end{frame}
+
+%-----------------------------------------------------------
+\begin{frame}{Mustererkennung}
+\begin{block}{Bildung von Intervallen}
+\smallskip
+\small{Beispiel mit Intervallgröße 4: [00:00-03:39Uhr],[04:00-07:59Uhr]...}\normalsize
+\smallskip
+\begin{itemize}
+\item Ermittlung folgender Werte:
+\begin{itemize}
+\item Durchschnittsverbrauch pro Intervall
+\item Globaler Durchschnittsverbrauch
+\end{itemize}
+\end{itemize}
+\end{block}
+\begin{block}{Detektion von Interpolations-Ausreißern}
+\begin{itemize}
+\item Durchschnittswerte geben Auskunft darüber, wann eine Person bspw. schläft oder wann sie viele Geräte benutzt
+\item Interpolierte Werte werden mit Durchschnittsverbrauchen verglichen
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+%-----------------------------------------------------------
+\begin{frame}{Stromverbrauch der Haushalte}
+\begin{figure}
+  \centering
+     \includegraphics[width=0.9\textwidth]{pics/avgEnergyConsumption.png}
+  	\caption{Struktur des Stromverbrauchs nach Anwendungsbereichen 2016 \cite{bdew:consumption}}
+  \label{fig:Bild1}
+\end{figure}
+\end{frame}
+
+%-----------------------------------------------------------
+\begin{frame}{Durchschnittlicher Tages-\& Nachtverbrauch}
+\begin{block}{Wann geeignet?}
+\begin{itemize}
+\item Wenn sehr viele Verbrauchsdaten fehlen
+\end{itemize}
+\end{block}
+\begin{block}{Die Heuristik bedient sich folgender Elemente}
+\begin{itemize}
+\item Berechnung des durchschnittlichen Tages-/Stundenverbrauchs auf Basis von:
+\begin{itemize}
+\item Anteiliger Verbrauch der Geräte
+\item Anzahl der Personen im Haushalt
+\end{itemize}
+\item Durchschnittliche Ruhezeiten
+\begin{itemize}
+\item werktags
+\item an Wochenenden und Feiertagen
+\end{itemize}
+\item Anwendung auf interpolierte Werte, die sich stark vom durchschnittlichen Wertebereich unterscheiden
+\end{itemize}
+\end{block}
+\end{frame}
+
+%-----------------------------------------------------------
+\begin{frame}{Saisonaler Verbrauch}
+\begin{block}{qwtfgerhjtkutgl}
+\begin{itemize}
+\item bla
+\end{itemize}
+\end{block}
+\end{frame}
