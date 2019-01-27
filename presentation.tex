@@ -5,7 +5,7 @@
 %\documentclass[handout]{beamer} % Handoutversion (s/w und 4up ohne \pause)
 %\documentclass[trans]{beamer}   % wie Präsentation, aber ohne \pause
 
-
+\usepackage[font={tiny}]{caption}
 \usepackage{sansmathaccent}
 \pdfmapfile{+sansmathaccent.map}
 
@@ -87,6 +87,15 @@
 
 % Actual content
 \input{content.tex}
+
+%-----------------------------------------------------------
+\begin{frame}{Quellen}
+
+\bibliographystyle{apalike}
+\bibliography{presentation}
+
+\end{frame}
+%-----------------------------------------------------------
 
 \begin{frame}{}
 \fontsize{24pt}{12pt}\selectfont
