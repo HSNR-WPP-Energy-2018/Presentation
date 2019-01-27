@@ -143,6 +143,65 @@ text
 \end{frame}
 
 %-----------------------------------------------------------
+\begin{frame}{Durchschnittsbildung}
+\begin{block}{Idee}
+\begin{itemize}
+	\item Verallgemeinerung der Interpolation aus Daten vom Vortag
+	\item Berechnung der Werte auf Basis anderer Daten in bestimmten Abständen
+	\begin{itemize}
+		\item Mögliche Abstände: Wochen, Tage, umliegende Werte
+		\item Anzahl und Gewichtung pro Intervall definierbar
+	\end{itemize}
+\end{itemize}
+\end{block}
+\begin{block}{Herausforderungen}
+\begin{itemize}
+	\item Konfiguration der Intervalle und Gewichtungen
+	\item Starke Einschränkungen bei der Interpolation großer Lücken
+\end{itemize}
+\end{block}
+\end{frame}
+
+%-----------------------------------------------------------
+\begin{frame}{Datenbankansatz (1/2)}
+\begin{block}{Idee}
+\begin{itemize}
+	\item Interpolation nicht nur aus den (lückenhaften) zur Verfügung gestellten Daten
+	\item Bildung einer Datenbasis aus Lastprofilen vieler Haushalte
+	\item Kategorisierung der Datensätzen
+	\begin{itemize}
+		\item Einfache Beschreibungen (Wohnung / Haus, etc.)
+		\item Numerische Einordnung (Personenanzahl, Wohnfläche, etc.)
+	\end{itemize}
+	\item Interpolation nur aus "ähnlichen" Datensätzen
+	\begin{itemize}
+		\item Filterung auf Basis der Kategorisierung
+		\item Durchschnittsbildung der gefilterten Datensätze
+		\item Erweiterung: gewichteter Durchschnitt, Anpassung an umliegende Werte in lückenhaftem Datensatz
+	\end{itemize}
+	\item Speicherung in andersartigem Datenformat - Unabhängigkeit von Erfassungsjahr
+\end{itemize}
+\end{block}
+\end{frame}
+
+%-----------------------------------------------------------
+\begin{frame}{Datenbankansatz (2/2)}
+\begin{block}{Vorteile}
+\begin{itemize}
+	\item Interpolation ohne eigene Daten oder für lückenhafte Daten
+	\item Einfluss vieler Datensätze führt zu sehr realistischen Ergebnissen
+	\item Granulare Konfiguration des eigenen Haushalts möglich
+\end{itemize}
+\end{block}
+\begin{block}{Nachteile}
+\begin{itemize}
+	\item Große Datenbasis erforderlich
+	\item Zusätzliche Kategorisierung
+\end{itemize}
+\end{block}
+\end{frame}
+
+%-----------------------------------------------------------
 \section{Heuristiken}
 \begin{frame}{Inhaltsverzeichnis}
 \tableofcontents[currentsection]
