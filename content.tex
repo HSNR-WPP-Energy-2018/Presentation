@@ -9,12 +9,9 @@
 \end{frame}
 
 %-----------------------------------------------------------
-
 \section{Algorithmen}
-\begin{frame}
-\begin{center}
-\huge{\textbf{{\secname}}}
-\end{center}
+\begin{frame}{Inhaltsverzeichnis}
+\tableofcontents[currentsection]
 \end{frame}
 
 %-----------------------------------------------------------
@@ -53,14 +50,14 @@ mit $x1\leq\ $x $\leq \ x_2$
 
 %-----------------------------------------------------------
 \begin{frame}{Interpolationsverfahren nach Newton (1/2)}
-\begin{block}{Ziel des Algorithmus}
+\begin{block}{Im Aufbau}
 \begin{itemize}
-\item Mathematische Erklärung folgt
-\item 
+\item Annäherung an die Polynomfunktion vom möglichst kleinen Grad an (bis Grad n)
+\item bla
 \end{itemize}
 \end{block}
 \begin{block} {Algorithmus}
-\underline{Vorteile}
+\underline{Überschrift}
 \begin{itemize}
 \item Bilden von dividierten Differenzen aus den n nächsten Nachbarn
 \end{itemize}
@@ -77,7 +74,8 @@ mit $x1\leq\ $x $\leq \ x_2$
 \underline{Nachteile}
 \begin{itemize}
 \item Je größer der Grad, desto instabiler die Polynome (schwingen stark zwischen sehr verschiedenen Punkten)
-\item \textit{Lösung:} Betrachtung der n nächsten Nachbarn
+\item \textit{Lösung 1:} Betrachtung der n nächsten Nachbarn
+\item \textit{Lösung 2:} Verwendung eines alternativen Verfahrens
 \end{itemize}
 \end{block}
 \end{frame}
@@ -108,9 +106,65 @@ mit $x1\leq\ $x $\leq \ x_2$
 \end{frame}
 
 %-----------------------------------------------------------
-\subsection{\glqq Intelligente\grqq Interpolationsverfahren}
+\subsection{\grqq Intelligente\grqq Interpolationsverfahren}
 \begin{frame}{\insertsubsectionhead}
 text
 \end{frame}
 
+%-----------------------------------------------------------
+\begin{frame}{Interpolation aus Daten vom Vortag (1/2)}
+\begin{block}{Idee}
+\begin{itemize}
+\item Tagesabläufe unterliegen meistens einem bestimmten Schema
+\begin{itemize}
+\item Energieverbrauch ändert sich nicht stark vom vorherigen Tag
+\item Mo-Fr und Sa-So/Feiertage zeigen ähnliche Verbrauchsverläufe
+\end{itemize}
+\item Wenn ein Verbrauchswert fehlt, wird der Wert des Vortages genommen (gleiche Uhrzeit)
+\item Weniger Rechenaufwand \& Ergebnisse orientieren sich näher an realem Verbrauchsverhalten
+\end{itemize}
+\end{block}
+\end{frame}
 
+%-----------------------------------------------------------
+\begin{frame}{Interpolation aus Daten vom Vortag (2/2)}
+\begin{figure}
+  \centering
+     \includegraphics[width=0.75\textwidth]{pics/yesterday2.png}
+  %\tiny{\caption{Übersicht der Bestandteile}}
+  \label{fig:Bild1}
+\end{figure}
+\begin{block}{Fehlerpotentiale}
+\begin{itemize}
+\item Den Personen wird ein geregelter Tagesablauf unterstellt
+\item Es können versehentlich Peaks erfasst werden
+\end{itemize}
+\end{block}
+\end{frame}
+
+%-----------------------------------------------------------
+\section{Heuristiken}
+\begin{frame}{Inhaltsverzeichnis}
+\tableofcontents[currentsection]
+\end{frame}
+
+%-----------------------------------------------------------
+\subsection{Feiertage}
+\begin{frame}{\insertsubsectionhead}
+\begin{block}{Wie sollen Feiertage interpoliert werden?}
+\begin{itemize}
+\item Der Datentyp LocalDateTime kann Wochentage erfassen, aber keine Feiertage
+\item Es gibt in Java keine guten Libraries für Feiertage
+\item \underline{Welche Feiertage werden benötigt?}
+\begin{itemize}
+\item Ändern sich je nach Land und Bundesland/Region
+\item Was ist mit Personen, die pendeln?
+\end{itemize}
+\end{itemize}
+\end{block}
+\begin{block}{Implementierung im Programm}
+\begin{itemize}
+\item Manueller Import von iCalendar-Dateien (standardisiertes Dateiformat)
+\end{itemize}
+\end{block}
+\end{frame}
