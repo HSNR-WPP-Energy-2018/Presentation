@@ -1,12 +1,15 @@
 %!TEX root = ./presentation.tex
 
-\section{Algorithmen}
+\section{Einleitung}
 \begin{frame}{Inhaltsverzeichnis}
 \tableofcontents[currentsection]
 \end{frame}
 
+
 %-----------------------------------------------------------
-\begin{frame}{Einleitung}
+
+\section{Einleitung}
+\begin{frame}{\insertsectionhead}
 	\begin{itemize}
 		\item Ergänzung zu Masterarbeit: Rentabilität einer Solaranlage
 		\item Früher: Erlös $>$ eigene Kosten
@@ -37,7 +40,7 @@
 \end{frame}
 
 %-----------------------------------------------------------
-\begin{frame}{Einleitung}
+\begin{frame}{Einleitung (bessere Überschrift finden)}
 \begin{itemize}
 	\item Daten aus Excel Dokument extrahieren
 	\item Daten in geeignete Datentypen konvertieren
@@ -54,8 +57,17 @@
 \end{itemize}
 \end{frame}
 
+
 %-----------------------------------------------------------
-\begin{frame}{Korrelationsmatrix}
+
+\section{Algorithmen}
+\begin{frame}{Inhaltsverzeichnis}
+\tableofcontents[currentsection]
+\end{frame}
+
+%-----------------------------------------------------------
+\subsection{Korrelationsmatrix}
+\begin{frame}{\insertsubsectionhead}
 	%TBC..
 	%Eingabe: mList = durchschnittliche Monatshilfsmatrix
 	%Ausgabe: aList = Korrelationsmatrix
@@ -66,7 +78,8 @@
 \end{frame}
 
 %-----------------------------------------------------------
-\begin{frame}{Lineare Interpolation}
+\subsection{Lineare Interpolation}
+\begin{frame}{\insertsubsectionhead}
 \begin{figure}
   \centering
      \includegraphics[width=0.5\textwidth]{pics/linear.png}
@@ -76,7 +89,7 @@
 \begin{itemize}
 \item Verfahren legt eine Gerade zwischen zwei Punkte $x_1$ \& $x_2$
 \item Gesuchte Werte liegen auf der Geraden
-\item Für jeden unbekannten Datenpunkt P(x/y) gilt:
+\item Für jeden unbekannten Datenpunkt $P(x/y)$ gilt:
 $$y = y_1 + \frac{y_2 - y_1}{x_2 - x_1} \cdot (x - x_1)$$
 mit $x1\leq\ $x $\leq \ x_2$
 \item Erzeugt stetigen, aber keinen glatten Verlauf der Funktion
@@ -94,22 +107,27 @@ mit $x1\leq\ $x $\leq \ x_2$
 \end{figure}
 \begin{itemize}
 \item Versuchen, durch gegebene Punkte eine Kurve zu legen
-\item Finden zu n+1 paarweise verschiedenen Datenpunkten ein Interpolationspolynom maximal n-ten Grades
+\item Finden zu $n+1$ paarweise verschiedenen Datenpunkten ein Interpolationspolynom maximal $n-ten$ Grades
 \end{itemize}
 \end{frame}
 
 %-----------------------------------------------------------
 \begin{frame}{Interpolationsverfahren nach Newton (1/2)}
-\begin{block}{Im Aufbau}
+\begin{block}{Vorgehensweise}
 \begin{itemize}
-\item Annäherung an die Polynomfunktion vom möglichst kleinen Grad an (bis Grad n)
-\item bla
+\item Gegeben sind n Stützstellen
+\item Annäherung an die Polynomfunktion vom möglichst kleinen Grad an (bis Grad $n$)
+\item Gesucht: Polynomfunktion für $n+1$ Stützstellen
+\begin{itemize}
+\item Mit unbekannten Verbrauchsdaten bei $n+1$
+\end{itemize}
 \end{itemize}
 \end{block}
-\begin{block} {Algorithmus}
-\underline{Überschrift}
+\begin{block} {Interpolationspolynom}
+\underline{Formel}
 \begin{itemize}
-\item Bilden von dividierten Differenzen aus den n nächsten Nachbarn
+\item $p_n(x) = a_0+a_1(x_n-x_0)+...+a_n(x_n-x_0)(x_n-x_1)...(x_n-x_{n-1})$
+\item Für $n+1$ wird die Formel nach diesem Schema erweitert
 \end{itemize}
 \end{block}
 \end{frame}
@@ -158,7 +176,14 @@ mit $x1\leq\ $x $\leq \ x_2$
 %-----------------------------------------------------------
 \subsection{\grqq Intelligente\grqq Interpolationsverfahren}
 \begin{frame}{\insertsubsectionhead}
-text
+\begin{itemize}
+\item Wie sehr eignen sich rein mathematische Betrachtungen für die Interpolation?
+\begin{itemize}
+\item Energieverbrauch unterliegt keinem Funktionsgraphen
+\item Es können auch unrealistisch hohe oder niedrige Werte auftreten
+\end{itemize}
+\item \underline{Neuer Schwerpunkt:} Interpolation ausschließlich auf Basis realer Daten
+\end{itemize}
 \end{frame}
 
 %-----------------------------------------------------------
@@ -279,7 +304,8 @@ text
 \end{frame}
 
 %-----------------------------------------------------------
-\begin{frame}{Mustererkennung}
+\subsection{Mustererkennung}
+\begin{frame}{\insertsubsectionhead}
 \begin{block}{Bildung von Intervallen}
 \smallskip
 \small{Beispiel mit Intervallgröße 4: [00:00-03:39Uhr],[04:00-07:59Uhr]...}\normalsize
@@ -313,7 +339,8 @@ text
 \end{frame}
 
 %-----------------------------------------------------------
-\begin{frame}{Durchschnittlicher Tages-\& Nachtverbrauch}
+\subsection{Durchschnittlicher Tages-\& Nachtverbrauch}
+\begin{frame}{\insertsubsectionhead}
 \begin{block}{Wann geeignet?}
 \begin{itemize}
 \item Wenn sehr viele Verbrauchsdaten fehlen
@@ -337,10 +364,21 @@ text
 \end{frame}
 
 %-----------------------------------------------------------
-\begin{frame}{Saisonaler Verbrauch}
-\begin{block}{qwtfgerhjtkutgl}
+\subsection{Saisonaler Verbrauch}
+\begin{frame}{\insertsubsectionhead}
+\begin{block}{Einfluss der Jahreszeiten}
 \begin{itemize}
-\item bla
+\item Höherer Verbrauch im Winter als im Sommer
+\item Nachträgliche Berücksichtigung in den interpolierten Werten
+\begin{itemize}
+\item Verspricht vor allem einen Nutzen für die rein mathematischen Algorithmen oder für mehrere fehlende Monate im Datensatz
+\end{itemize}
+\end{itemize}
+\end{block}
+\begin{block}{Heuristiken}
+\begin{itemize}
+\item $10\%$-Statistik vom Europäischen Fonds für regionale Entwicklung (EFRE)
+\item Prozentsatz aus den vorhandenen Daten
 \end{itemize}
 \end{block}
 \end{frame}
