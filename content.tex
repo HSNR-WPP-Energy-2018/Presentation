@@ -7,8 +7,6 @@
 
 
 %-----------------------------------------------------------
-
-\section{Einleitung}
 \begin{frame}{\insertsectionhead}
 	\begin{itemize}
 		\item Ergänzung zu Masterarbeit: Rentabilität einer Solaranlage
@@ -287,8 +285,8 @@ mit $x1\leq\ $x $\leq \ x_2$
 \end{frame}
 
 %-----------------------------------------------------------
-\subsection{Feiertage}
-\begin{frame}{\insertsubsectionhead}
+\subsection{Für überschaubare Datenlücken}
+\begin{frame}{Feiertage}
 \begin{block}{Wie sollen Feiertage interpoliert werden?}
 \begin{itemize}
 \item Der Datentyp LocalDateTime kann Wochentage erfassen, aber keine Feiertage
@@ -308,8 +306,7 @@ mit $x1\leq\ $x $\leq \ x_2$
 \end{frame}
 
 %-----------------------------------------------------------
-\subsection{Mustererkennung}
-\begin{frame}{\insertsubsectionhead}
+\begin{frame}{Mustererkennung}
 \begin{block}{Bildung von Intervallen}
 \smallskip
 \small{Beispiel mit Intervallgröße 4: [00:00-03:39Uhr],[04:00-07:59Uhr]...}\normalsize
@@ -333,6 +330,7 @@ mit $x1\leq\ $x $\leq \ x_2$
 
 
 %-----------------------------------------------------------
+\subsection{Für sehr große Datenlücken}
 \begin{frame}{Stromverbrauch der Haushalte}
 \begin{figure}
   \centering
@@ -343,8 +341,7 @@ mit $x1\leq\ $x $\leq \ x_2$
 \end{frame}
 
 %-----------------------------------------------------------
-\subsection{Durchschnittlicher Tages-\& Nachtverbrauch}
-\begin{frame}{\insertsubsectionhead}
+\begin{frame}{Durchschnittlicher Tages-\& Nachtverbrauch}
 \begin{block}{Wann geeignet?}
 \begin{itemize}
 \item Wenn sehr viele Verbrauchsdaten fehlen
@@ -368,8 +365,7 @@ mit $x1\leq\ $x $\leq \ x_2$
 \end{frame}
 
 %-----------------------------------------------------------
-\subsection{Saisonaler Verbrauch}
-\begin{frame}{\insertsubsectionhead}
+\begin{frame}{Saisonaler Verbrauch}
 \begin{block}{Einfluss der Jahreszeiten}
 \begin{itemize}
 \item Höherer Verbrauch im Winter als im Sommer
@@ -486,6 +482,7 @@ mit $x1\leq\ $x $\leq \ x_2$
 \begin{itemize}
 	\item Sehr ähnliche Werte für alle Heuristiken
 	\item Mit dieser Konfiguration Verschlechterung der Ergebnisse
+	\item Hilfreich bei großen Datenlücken
 \end{itemize}
 \end{block}
 \end{frame}
@@ -505,6 +502,7 @@ mit $x1\leq\ $x $\leq \ x_2$
 		\item Tieferes Fachwissen
 		\item Lernen von Parametern durch Optimierung
 	\end{itemize}
+	\item Ausgabe von Wahrscheinlichkeiten für die Ergebnisse
 	\item Einsatz komplexerer Algorithmen
 \end{itemize}
 \end{frame}
