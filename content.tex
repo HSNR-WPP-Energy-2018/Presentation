@@ -40,7 +40,7 @@
 \end{frame}
 
 %-----------------------------------------------------------
-\begin{frame}{Einleitung (bessere Überschrift finden)}
+\begin{frame}{Vorbereitung}
 \begin{itemize}
 	\item Daten aus Excel Dokument extrahieren
 	\item Daten in geeignete Datentypen konvertieren
@@ -68,13 +68,17 @@
 %-----------------------------------------------------------
 \subsection{Korrelationsmatrix}
 \begin{frame}{\insertsubsectionhead}
-	%TBC..
-	%Eingabe: mList = durchschnittliche Monatshilfsmatrix
-	%Ausgabe: aList = Korrelationsmatrix
-	
-    %mList = outlier(mList)
-    %\right) mList = outlier(mList)
-
+\begin{itemize}
+	\item[] Eingabe: mList = durchschnittliche Monatshilfsmatrix
+	\item[] Ausgabe: aList = Korrelationsmatrix
+	\bigskip
+	\item[] mList = outlier(mList)
+	\item[]\quad FÜR JEDES jahr
+	\item[]\quad\quad FÜR i = 1 BIS 12
+	\item[]\quad\quad\quad FÜR j = 1 BIS 12
+	\item[]\quad\quad\quad\quad aList[jahr][i][j] = mList[jahr][i] / mList[jahr][j]
+	\item[] Reduce operation -$>$ averaging
+\end{itemize}
 \end{frame}
 
 %-----------------------------------------------------------
